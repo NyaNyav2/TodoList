@@ -6,7 +6,7 @@ export const fetchPerson = createAsyncThunk(
   "people/fetchPerson",
   async (data) => {
     const response = await axios(
-      `http://localhost:3000/api/v1/people/${data.person._id}`
+      `https://todolist-ohfe.onrender.com/api/v1/people/${data.person._id}`
     );
 
     return response.data;

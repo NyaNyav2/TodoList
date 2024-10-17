@@ -19,7 +19,7 @@ const AddPerson = ({}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = "http://localhost:3000/api/v1/people";
+    const url = "https://todolist-ohfe.onrender.com/api/v1/people";
     if(currentUpdatePerson === 0){
       try {
         
@@ -32,7 +32,7 @@ const AddPerson = ({}) => {
       }
     }else{
       try {
-        const response = await axios.patch(`http://localhost:3000/api/v1/people/${currentUpdatePerson}`, inputValues);
+        const response = await axios.patch(`https://todolist-ohfe.onrender.com/api/v1/people/${currentUpdatePerson}`, inputValues);
         store.dispatch(changeCurrentUpdatePerson({id: 0}));
         store.dispatch(resetInputValues());
         toast.success("Person successfully updated! Please refresh to see the changes.");
